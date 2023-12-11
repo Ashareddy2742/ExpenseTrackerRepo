@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Expenses Tracker</title>
+	<link rel="icon" th:href="@{/images/ExpensesTrackerfavicon.ico}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<style>
+		* {
+			margin: 0;
+		}
+
+		body {
+			background-image: radial-gradient(ellipse, lightgreen, lightpink);
+		}
+	</style>
+</head>
+
+<body>
+	<div
+		style="height: 68px; width: 1536px;; background-color: rgb(201, 100, 169); font-size: 30px; padding-top: 25px;">
+		<img th:src="@{/images/expensetracker.jpg}" alt="img" style="height: 40px; width: 40px; padding-left: 20px;">
+		<strong style="padding-left: 30px;">Spring Expenses Tracker</strong>
+	</div>
+	<br><br>
+	<div>
+		<center>
+			<span style="font-size: 40px;">Update Your Profile</span><br><br>
+			<span style="font-size: 25px">Username</span><br>
+			<input type="text" style="height: 25px; width: 250px;"><br><br>
+			<span style="font-size: 25px;">Email</span><br>
+			<input type="email" style="height: 25px; width: 250px;"><br><br>
+			<span style="font-size: 25px;">Mobile</span><br>
+			<input type="number" style="height: 25px; width: 250px;"><br><br>
+			<span style="font-size: 25px;">Password</span><br>
+			<input type="password" style="height: 25px; width: 250px;"><br><br>
+			<span style="font-size: 25px;">Profile Picture</span><br>
+			<input type="file" style="height: 25px; width: 250px;"><br><br>
+
+			<!-- to display image from session object-->
+			<img id="displayImage" th:if="${session.image != null}" th:src="'data:image;base64,'+${session.image}">
+			<button>Update Profile</button>
+		</center>
+
+
+	</div>
+</body>
+
+</html>

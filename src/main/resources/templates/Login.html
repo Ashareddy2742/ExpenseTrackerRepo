@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+
+<head>
+	<title>Expenses Tracker</title>
+	<link rel="icon" th:href="@{/images/ExpensesTrackerfavicon.ico}">
+	<style>
+		* {
+			margin: 0;
+		}
+		#book {
+			height: 40px;
+			width: 40px;
+		}
+
+		#google {
+			height: 40px;
+			width: 40px;
+		}
+	</style>
+	<script>
+		function stopBack() {
+			window.history.go(1);
+		}
+	</script>
+</head>
+
+<body>
+	<div style="height: 68px;  width: 1536px; background-color: rgb(201, 100, 169); font-size: 30px; padding-top: 25px;">
+		<img th:src="@{/images/expensetracker.jpg}" alt="img" style="height: 40px; width: 40px; padding-left: 20px;">
+		<strong style="padding-left: 30px;">Spring Expenses Tracker</strong>
+	</div><br><br>
+	<center>
+		<div style="height: 500px; width: 500px; background-color:lightsalmon; padding-top: 30px; border-radius: 10px;">
+			<h1>Sign In With</h1>
+			<br><br><br>
+
+			<table border="0" cellspacing="0px" cellpadding="8px">
+				<tr>
+					<td>
+						<a th:href="@{https://www.facebook.com/}" target="_blank"><img th:src="@{/images/facebook.jpeg}" alt=""
+								id="book"></a>
+					</td>
+					<td>
+						<a th:href="@{https://www.facebook.com/}" target="_blank"
+							style="color: black; text-decoration: none; font-size: 20px; font-family: 'Times New Roman', Times, serif ;">Facebook</a>
+					</td>
+					<td>
+						<a th:href="@{https://www.google.com/}" target="_blank"><img th:src="@{/images/google.png}" alt=""
+								id="google"></a>
+					</td>
+					<td>
+						<a th:href="@{https://www.google.com/}" target="_blank"
+							style="color: black; text-decoration: none; font-size: 20px; font-family: 'Times New Roman', Times, serif ;">Google</a>
+					</td>
+				</tr>
+			</table>
+			<br><br>
+			<form th:action="@{/loginoperation}" method="post">
+				Username<br>
+				<input type="text" name="userName"
+					style="width: 350px; height: 30px; border-radius: 10px; border: none;"><br><br>
+				Password<br>
+				<input type="password" name="password"
+					style="width: 350px; height: 30px; border-radius: 10px; border: none;"><br><br>
+				<input type="submit" value="Sign In"
+					style="width: 350px; border-radius: 10px; border: none; height: 35px;background-color: black; color: white;">
+				<br><br>
+				<h1 th:text="${msg}" style="color: green;"></h1>
+			</form>
+			<br>
+			<p>Not a member? <a th:href="@{/expense/register}" style="cursor: pointer; color:blue;">Sign up now</a>
+			</p>
+		</div>
+	</center>
+</body>
+
+</html>
